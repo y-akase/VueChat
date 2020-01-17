@@ -43,29 +43,27 @@ export default {
 </script>
 
 <style lang="sass">
-.message-list 
-  margin-bottom: 15px
+.message-list
   padding-right: 15px
+  margin-bottom: 15px
 
-.message-group 
+.message-group
   height: 65vh !important
   overflow-y: scroll
 
-.message 
-  border: 1px solid lightblue
-  border-radius: 4px
+.message
   padding: 10px
   margin-bottom: 15px
+  border: 1px solid lightblue
+  border-radius: 4px
 
-.message-title 
-  font-size: 1rem
+.message-title
   display:inline
+  font-size: 1rem
 
-.message-text 
-  color: gray
+.message-text
   margin-bottom: 0
+  color: gray
 
-.user-typing 
-  height: 1rem
-
-</style>
+.user-typing
+  height: 1rem</style>

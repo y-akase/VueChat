@@ -34,6 +34,5 @@ export default {
 </script>
 
 <style lang="sass">
-#chat-navbar 
-  margin-bottom: 15px
-</style>
+#chat-navbar
+  margin-bottom: 15px</style>
