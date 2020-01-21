@@ -13,6 +13,7 @@
       <b-nav-item
         href="#"
         active
+        @click="onLogout"
       >
         Logout
       </b-nav-item>
