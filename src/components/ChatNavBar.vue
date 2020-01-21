@@ -13,6 +13,7 @@
       <b-nav-item
         href="#"
         active
+        @click="onLogout"
       >
         Logout
       </b-nav-item>
@@ -21,15 +22,40 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions, mapMutations } from 'vuex'
 
 export default {
   name: 'ChatNavBar',
   computed: {
     ...mapState([
       'user',
+      'reconnect'
     ])
   },
+  mounted() {
+    window.addEventListener('beforeunload', this.unload)
+    if(this.reconnect) {
+      this.login(this.user.username)
+    }
+  },
+  methods: {
+    ...mapActions([
+      'logout',
+      'login'
+    ]),
+    ...mapMutations([
+      'setReconnect'
+    ]),
+    onLogout() {
+      this.$router.push({ path: '/' })
+      this.logout()
+    },
+    unload() {
+      if(this.user.username) { // User hasn't logged out
+        this.setReconnect(true)
+      }
+    }
+  }
 }
 </script>
 
